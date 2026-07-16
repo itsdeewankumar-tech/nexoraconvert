@@ -25,9 +25,8 @@ Built with **React • Vite • TypeScript • Tailwind CSS**
 
 **Website**
 
-https://nexoraconvert.vercel.app
+https://nexoraconvert-4hen.vercel.app/
 
-> Replace with your production domain after deployment.
 
 ---
 
