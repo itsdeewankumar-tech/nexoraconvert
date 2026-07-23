@@ -21,6 +21,7 @@ import ImageConvert from './tools/ImageConvert';
 import ImageToText from './tools/ImageToText';
 import PdfToText from './tools/PdfToText';
 import AiImageEnhancer from './tools/AiImageEnhancer';
+import PDFTextEditor from './tools/PDFTextEditor';
 
 function NotFound() {
   return (
@@ -37,6 +38,7 @@ function NotFound() {
 
 function renderTool(slug: string) {
   switch (slug) {
+    case 'pdf-text-editor': return <PDFTextEditor />;
     case 'pdf-to-word': return <PdfToWord />;
     case 'word-to-pdf': return <WordToPdf />;
     case 'merge-pdf': return <MergePdf />;
