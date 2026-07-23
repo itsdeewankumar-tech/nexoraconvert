@@ -64,6 +64,7 @@ export default function PdfEditor({ file, onClose }: Props) {
     (async () => {
       try {
         setLoading(true);
+        setError(null);
         const buf = await file.arrayBuffer();
         const bytes = new Uint8Array(buf);
         const pdf = await loadPdf(bytes.slice());
@@ -73,9 +74,10 @@ export default function PdfEditor({ file, onClose }: Props) {
         setCurrentPage(0);
         setLoading(false);
       } catch (e) {
-        console.error(e);
+        console.error('PDF Loading Error:', e);
         if (mounted) {
-          setError('Could not open this PDF. Please make sure it is a valid PDF file.');
+          const errorMsg = e instanceof Error ? e.message : 'Unknown error occurred';
+          setError(`Could not open this PDF. ${errorMsg}`);
           setLoading(false);
         }
       }
