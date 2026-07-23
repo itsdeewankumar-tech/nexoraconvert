@@ -1,4 +1,4 @@
-import { FileText, FileType2, Combine, Scissors, Image as ImageIcon, FileImage, Minimize2, Maximize2, Eraser, ScanText, Camera, Repeat, Sparkles } from 'lucide-react';
+import { FileText, FileType2, Combine, Scissors, Image as ImageIcon, FileImage, Minimize2, Maximize2, Eraser, ScanText, Camera, Repeat, Sparkles, Edit2 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export type ToolCategory = 'PDF Tools' | 'Image Tools' | 'AI Tools';
@@ -19,6 +19,25 @@ export interface ToolMeta {
 }
 
 export const tools: ToolMeta[] = [
+  {
+    slug: 'pdf-text-editor',
+    name: 'PDF Text Editor',
+    shortName: 'PDF Text Editor',
+    category: 'PDF Tools',
+    icon: Edit2,
+    tagline: 'Edit PDF text without changing layout',
+    description:
+      'Add, edit, or delete text in your PDF files while preserving the original layout and formatting. Perfect for adding signatures, annotations, or modifying specific text content without affecting the document structure.',
+    accept: 'application/pdf',
+    keywords: ['pdf editor', 'edit pdf text', 'pdf text editor', 'modify pdf', 'edit pdf without changing layout', 'preserve pdf formatting'],
+    faqs: [
+      { q: 'Does editing change the PDF layout?', a: 'No. Our editor preserves the original PDF structure and layout while allowing you to add or modify text.' },
+      { q: 'Can I edit multiple pages?', a: 'Yes, navigate between pages and edit text on any page freely.' },
+      { q: 'Can I customize the text appearance?', a: 'Yes, adjust font size, color, and position for each text element.' },
+      { q: 'Is my PDF file safe?', a: 'All processing happens in your browser. Your files never leave your device.' },
+    ],
+    steps: ['Upload your PDF file', 'Navigate and add/edit text', 'Download your modified PDF'],
+  },
   {
     slug: 'pdf-to-word',
     name: 'PDF to Word Converter',
